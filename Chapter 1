@@ -18,4 +18,3 @@ portable means that they can run on different kinds of computers with few or no 
 Executable: Another name for object code that is ready to run. 
 It is ready to run because it's been translated from the source code of a high level language to a low level language that a computer can read and execute. 
 
-Exercise 1.2
