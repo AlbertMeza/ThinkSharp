@@ -20,5 +20,52 @@ It is ready to run because it's been translated from the source code of a high l
 
 
 Exercise 1.2:
+As we continue, I will explain the point of every word within this program.
+===========================================================================
+using System;
 
+namespace ThinkSharpChapter1Exercise1_2
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
 
+            Console.WriteLine("Try typing 'cw' -> tab tab for your next statement!");
+
+            //The cw tab tab is meant for a keyboard shortcut to write 'Console.WriteLine()' quicker
+        }
+    }
+}
+
+Exercise 1.3
+
+1. Every squiggly braces should have a matching opening and closing equivalent, the location of them will gradually become apparent
+
+2. Every squiggly braces should have a matching opening and closing equivalent, the location of them will gradually become apparent
+
+3. Main must be written correctly for it to compile, C# is case and spelling sensitive. Main doesn't equal Mian or main 
+(Main != mian or Main != main, != is the C# way to demonstrate "not equal"
+
+4. For now always include static in -> public static void Main(String[] args)
+
+5. For now always include public in -> public static void Main(String[] args)
+   This will compile without public but it's good to build the habit now.
+   
+6. Console is a Class located within the System library and needs to be included for now to use WriteLine, this will become second nature
+   Using.System = a library, a collection of classes
+   Console = a class, an object with properties and methods
+   WriteLine = a method, a function to make tasks easier
+
+7. C# continues to be case sensitive, WriteLine != Writeline
+
+8. Console.Write and Console.WriteLine are different methods within the Console Object
+   Console.Write will continue to write or display within the same line
+   Console.WriteLine will create a new line prior to displaying the input 
+
+9. Every parentheses should have a matching opening and closing equivalent
+
+10. Semi-colon's are the equivalent of a period in the english language. You need one to end a statement within C#. 
+   
+   
