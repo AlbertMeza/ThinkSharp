@@ -1,0 +1,40 @@
+using System;
+public class Narf
+{
+    public static void Zoop(string fred, int bob)
+    {
+        Console.WriteLine(fred);
+        if (bob == 5)
+        {
+            Ping("not ");
+        }
+        else
+        {
+            Console.WriteLine("!");
+        }
+    }
+    public static void Main(string[] args)
+    {
+        int bizz = 5;
+        int buzz = 2;
+        Zoop("just for", bizz);
+        Clink(2 * buzz);
+    }
+    public static void Clink(int fork)
+    {
+        Console.WriteLine("It's ");
+        Zoop("breakfast ", fork);
+    }
+    public static void Ping(string strangStrung)
+    {
+        Console.WriteLine("any " + strangStrung + "more ");
+    }
+}
+
+Ouput:
+
+just for
+any not more
+It's 
+breakfast
+!
