@@ -1,0 +1,27 @@
+using System;
+namespace Time
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            WriteEuropean("Saturday", "25", "October", "2000");
+
+            WriteAmerican("Saturday", "October", "25", "2000");
+        }
+
+        public static void WriteEuropean(string day, string date, string month, string year)
+        {
+            Console.WriteLine("European format:");
+            Console.WriteLine(day + " " + date + " " + month + ", " + year);
+            Console.WriteLine();
+        }
+
+        public static void WriteAmerican(string day, string month, string date, string year)
+        {
+            Console.WriteLine("American format:");
+            Console.WriteLine(day + ", " + month + " " + date + ", " + year);
+            Console.WriteLine() ;
+        }
+    }
+}
