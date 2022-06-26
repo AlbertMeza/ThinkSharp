@@ -1,0 +1,37 @@
+using System;
+namespace Date
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            //initialize all the variables, date and year could be a string in this problem
+            string day, month;
+            int date, year;
+
+            //question 2, assign all variables
+            day = "Saturday";
+            date = 25;
+            month = "June";
+            year = 2022;
+
+            //question 3, printing them all to see the output 
+            Console.WriteLine(day);
+            Console.WriteLine(date);
+            Console.WriteLine(month);
+            Console.WriteLine(year);
+            Console.WriteLine();
+
+            //question 4
+            Console.WriteLine("European format:");
+            Console.WriteLine(day + " " + date + " " + month + ", " + year);
+            Console.WriteLine();
+
+            //question 5
+            Console.WriteLine("American format:");
+            Console.WriteLine(day + ", " + month + " " + date + ", " + year);
+            Console.WriteLine("European format:");
+            Console.WriteLine(day + " " + date + " " + month + ", " + year);
+        }
+    }
+}
