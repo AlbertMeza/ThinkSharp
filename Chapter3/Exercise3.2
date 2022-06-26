@@ -5,3 +5,37 @@ The output is
 No, I wug.
 You wugga wug.
 I wug. 
+
+Question 2
+
+I'll go in 3 parts and I'll do the whole program or you can just look at where ping is first invoked
+what method I'm in  |  the statement  | the console output
+
+Main: Console.Write("No, I "); Console: No, I
+Main: Zoop(); Console: No, I
+Zoop: Baffle(); Console: No, I
+Baffle: Console.Write("wug"); Console: No, I wug
+Baffle: Ping(); Console: No, I wug
+Ping(): Console.WriteLine("."); Console: No, I wug.
+Zoop: Console.Write("You wugga "); Console: No, I wug.
+                                            You wugga
+Baffle: Console.Write("wug"); Console: No, I wug
+                                       You wugga wug
+Baffle: Ping(); Console: No, I wug
+                         You wugga wug
+Ping(): Console.WriteLine("."); Console: No, I wug
+                                         You wugga wug.
+Main: Console.Write("I "); Console: No, I wug
+                                    You wugga wug.
+                                    I
+Baffle: Console.Write("wug"); Console: No, I wug
+                                       You wugga wug.
+                                       I wug
+Baffle: Ping(); Console: No, I wug
+                         You wugga wug.
+                         I wug
+Ping: Console.WriteLine("."); Console: No, I wug
+                                       You wugga wug.
+                                       I wug.
+
+Complete
