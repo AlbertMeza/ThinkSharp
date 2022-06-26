@@ -1,0 +1,42 @@
+using System;
+public class Buzz
+{
+    public static void Baffle(string blimp)
+    {
+        Console.WriteLine(blimp); // (5)
+        Zippo("ping", -5); // (6, 9)
+    }
+    public static void Zippo(string quince, int flag)
+    {
+        if (flag < 0) // (2, 7)
+        {
+            Console.WriteLine(quince + " zoop"); // (8)
+        }
+        else
+        {
+            Console.WriteLine("ik"); // (3)
+            Baffle(quince); // (4, 10)
+            Console.WriteLine("boo-wa-ha-ha"); // (11)
+        }
+    }
+    public static void Main(string[] args)
+    {
+        Zippo("rattle", 13); // (1, 12)
+    }
+}
+
+
+Question 1 & Question 2 
+See source code above.
+
+Question 3 
+What is the value of the parameter blimp when Baffle gets invoked?
+"rattle"
+
+Question 4
+What is the output of this program?
+ik
+rattle
+ping zoop
+boo-wa-ha-ha
+*/
