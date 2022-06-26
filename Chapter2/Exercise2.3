@@ -1,0 +1,30 @@
+using System;
+namespace Time
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            //initialize the variable
+            int hour, minutes, seconds;
+
+            //assign the variables
+            hour = 13; //using a 24 hour clock so 13=1pm
+            minutes = 50;
+            seconds = 35;
+
+            int fromMidnight = ((hour * 60) + minutes) * 60 + seconds; //convert hour and minute to seconds
+            int secondsOneDay = 86400; //total seconds in one day
+
+            //question 3
+            Console.WriteLine("Seconds since midnight: " + fromMidnight);
+
+            //question 4
+            Console.WriteLine("Seconds remaining in the day: " + (secondsOneDay - fromMidnight));
+
+            //question 5
+            Console.WriteLine("Percentage of the day complete " + (fromMidnight * 100 / secondsOneDay) + "%");
+
+        }
+    }
+}
