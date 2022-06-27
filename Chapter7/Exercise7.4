@@ -1,0 +1,78 @@
+using System;
+
+namespace Chapter7
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine(Count("((3 + 7) * 2)"));
+            Console.WriteLine(Count("((((((((((3 + 7) * 2)"));
+            Console.WriteLine(Count("((3 + 7) * 2)))))))"));
+            CountAllBracketTypes("{{{[[(())]}");
+        }
+        static int Count(string s)
+        {
+            int len = s.Length;
+            int i = 0;
+            int count = 0;
+            while (i < len)
+            {
+                char c = s[i];
+                if (c == '(')
+                {
+                    count = count + 1;
+                }
+                else if (c == ')')
+                {
+                    count = count - 1;
+                }
+                i = i + 1;
+            }
+            return count;
+        }
+        static void CountAllBracketTypes(string s)
+        {
+            int len = s.Length;
+            int i = 0;
+            int countparenthesis = 0;
+            int countbrackets = 0;
+            int countcurly = 0;
+            while (i < len)
+            {
+                char c = s[i];
+                if (c == '(')
+                {
+                    countparenthesis = countparenthesis + 1;
+                }
+                if (c == ')')
+                {
+                    countparenthesis = countparenthesis - 1;
+                }
+                if (c == '[')
+                {
+                    countbrackets = countbrackets + 1;
+                }
+                if (c == ']')
+                {
+                    countbrackets = countbrackets - 1;
+                }
+                if (c == '{')
+                {
+                    countcurly = countcurly + 1;
+                }
+                if (c == '}')
+                {
+                    countcurly = countcurly - 1;
+                }
+                i = i + 1;
+            }
+            //List<int> ListofBracketTypes = new List<int> { countparenthesis, countbrackets, countcurly };
+            Console.WriteLine("Parenthesis Difference: " + countparenthesis);
+            Console.WriteLine("Bracket Difference: " + countbrackets);
+            Console.WriteLine("Curly Bracket Differnece: " + countcurly);
+        }
+    }
+}
+
+Created: Colton Hveem
