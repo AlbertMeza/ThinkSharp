@@ -1,0 +1,26 @@
+using System;
+
+namespace Chapter6
+{
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Power(2.0,8));
+            Console.WriteLine(Power(1.4,6));
+        }
+        public static double Power(double x, int n)
+        {
+            double total = 1;
+            while (n > 0)
+            {
+                total *= x;
+                n--;
+            }
+
+            return total;
+        }
+
+    }
+}
