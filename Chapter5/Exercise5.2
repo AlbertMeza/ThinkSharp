@@ -1,0 +1,28 @@
+using System;
+
+namespace Chapter5
+{
+    internal class Multadd
+    {
+        static double MultAdd(double a, double b, double c)
+        {
+            return a * b + c;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(MultAdd(1.0, 2.0, 3.0));
+            Console.WriteLine(MultAdd(7.0, 5.0, 3.0));
+            Console.WriteLine(MultAdd(1.0, Math.Sin((Math.PI / 4)), Math.Cos(Math.PI / 4) / 2));
+            Console.WriteLine(MultAdd(1.0, Math.Log10(10), Math.Log10(20)));
+            Console.WriteLine(Yikes(2.2));
+        }
+
+        static double Yikes(double x)
+        {
+            double a = x;
+            double b = Math.Exp(-x);
+            double c = Math.Sqrt((1.0 - b));
+            return MultAdd(a, b, c);
+        }
+    }
+}
