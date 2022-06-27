@@ -1,0 +1,26 @@
+using System;
+
+namespace abecedarian
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(IsAbecedarian("Albert"));
+            Console.WriteLine(IsAbecedarian("deinos"));
+        }
+        public static bool IsAbecedarian(string s)
+        {
+            if (s.Length == 1)
+                return true;
+            else
+            {
+                char first = s[0];
+                char second = s[1];
+                if (first < second)
+                    return IsAbecedarian(s.Substring(1));
+            }
+            return false;
+        }
+    }
+}
