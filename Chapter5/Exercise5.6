@@ -13,7 +13,7 @@ namespace Chapter5
             {
                 return Ack(m - 1, 1);
             }
-            else 
+            else //m and n == 0 have both been checked
             {
                 return Ack(m - 1, Ack(m, n - 1));
             }
