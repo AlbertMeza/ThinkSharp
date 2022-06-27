@@ -1,0 +1,29 @@
+using System;
+public class ProdTest //
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine(Prod(1, 4));
+    }
+    public static int Prod(int m, int n)
+    {
+        if (m == n)
+        {
+            return n;
+        }
+        else
+        {
+            return n * Prod(m, n -1);
+        }
+    }
+}
+
+/*
+ * The method Prod computes the factorial starting at n until it reaches m. 
+ 
+ * Stack diagram
+ * m=1, n=4, Prod (1,4) ↓                    ↑ 4 * Prod(1,3)  
+ * m=1, n=3, Prod (1,3) ↓                    ↑ 3 * Prod(1,2)
+ * m=1, n=2, Prod (1,2) ↓                    ↑ 2 * Prod(1,1)
+ * m=1, n=1, Prod (1,1) ↓ → → stack bottom → → (returns)
+ */
