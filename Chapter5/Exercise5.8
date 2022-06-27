@@ -1,0 +1,44 @@
+using System;
+
+namespace Chapter5
+{
+    internal class Program
+    {
+        public static double Power(double x, int n)
+        {
+            if (n == 0)
+            {
+                return 1;
+            }
+            else
+                return x * Power(x, n - 1);
+        }
+
+        //Optional Challenge
+        public static double efficientPower(double x, int n)
+        {
+            if (n % 2 == 0)
+            {
+                x = Math.Pow(x, n / 2);
+                return Power(x, 2);
+            }
+
+            else
+            {
+                if (n == 0)
+                {
+                    return 1;
+                }
+                else
+                    return x * efficientPower(x, n - 1);
+            }
+        }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Power(1.4,6));
+
+            Console.WriteLine(efficientPower(2.4,8));
+        }
+    }
+}
