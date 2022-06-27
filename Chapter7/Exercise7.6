@@ -1,0 +1,39 @@
+using System;
+
+namespace ThinkSharp
+{
+    internal class MysteryClass
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Mystery("Allen"));
+        }
+        public static string Mystery(string s)
+        {
+            int i = s.Length - 1;
+            string total = "";
+
+            while (i >= 0)
+            {
+                char ch = s[i];
+                Console.WriteLine(i + "     " + ch);
+
+                total = total + ch;
+                i--;
+            }
+            return total;
+        }
+    }
+}
+
+/*Output:
+ * 4    n
+ * 3    e
+ * 2    l
+ * 1    l
+ * 0    A
+ * nellA
+ * 
+ * The method takes a string, reverses it and prints out vertically the index and char descending
+ * 
+ */
