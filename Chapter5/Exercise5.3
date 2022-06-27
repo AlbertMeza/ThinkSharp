@@ -1,0 +1,31 @@
+using System;
+namespace Chapter5
+{
+    internal class Program
+    {
+        static bool IsTriangle(int stickA, int stickB, int stickC)
+        {
+            if (stickA > (stickB + stickC))
+            {
+                return false;
+            }
+
+            else if (stickB > (stickA + stickC))
+            {
+                return false;
+            }
+            else if (stickC > (stickA + stickB))
+            {
+                return false;
+            }
+            else return true;
+        }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(IsTriangle(18, 2, 3));
+            Console.WriteLine(IsTriangle(6, 3, 4));
+            Console.WriteLine(IsTriangle(11,6,5));
+        }
+    }
+}
