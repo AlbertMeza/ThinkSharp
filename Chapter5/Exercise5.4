@@ -1,0 +1,59 @@
+using System;
+namespace Chapter5
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            bool flag1 = IsHoopy(202); //true
+            bool flag2 = IsFrabjuous(202); //true
+            Console.WriteLine(flag1);
+            Console.WriteLine(flag2);
+            if (flag1 && flag2) //true
+            {
+                Console.WriteLine("ping!"); 
+            }
+            if (flag1 || flag2) //true
+            {
+                Console.WriteLine("pong!");
+            }
+        }
+
+
+        public static bool IsHoopy(int x)
+        {
+            bool hoopyFlag;
+            if (x % 2 == 0)
+            {
+                hoopyFlag = true;
+            }
+            else
+            {
+                hoopyFlag = false;
+            }
+            return hoopyFlag;
+        }
+        public static bool IsFrabjuous(int x)
+        {
+            bool frabjuousFlag;
+            if (x > 0)
+            {
+                frabjuousFlag = true;
+            }
+            else
+            {
+                frabjuousFlag = false;
+            }
+            return frabjuousFlag;
+        }
+    }
+}
+
+The output is:
+
+True
+True 
+ping!
+pong!
+
+now experiment to find out what makes them false and not display: ping! pong!
