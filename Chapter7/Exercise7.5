@@ -1,0 +1,45 @@
+/* 3)   All the strings seem arbitary except string+bool and the char+string concatenation.
+ *      The ones that seem most problematic is the chars since it conducts addition instead of concatenation.
+ */
+using System;
+
+namespace Test
+{
+    internal class Test
+    {
+        static void Main(string[] args)
+        {
+            bool a = true;
+            char b = 'z';
+            int c = 8;
+            string d = "f";
+            //Console.WriteLine(a + a); bool + bool, cannot compile
+            //Console.WriteLine(a + b); bool + char, cannot compile
+            //Console.WriteLine(a + c); bool + int, cannot compile
+            //Console.WriteLine(a + d); bool + string, cannot compile
+            //Console.WriteLine(b + a); char + bool, cannot compile
+            Console.WriteLine(b + b); //char + char, addition
+            Console.WriteLine(b + c); //char + int, addition
+            Console.WriteLine(b + d); //char + string, concatenation
+            //Console.WriteLine(c + a); int + bool, cannot compile
+            Console.WriteLine(c + b); //int + char, addition
+            Console.WriteLine(c + c); //int + int, addition
+            Console.WriteLine(c + d); //int + string, concatenation
+            Console.WriteLine(d + a); // string + bool, concatenation
+            Console.WriteLine(d + b); // string + char, concatenation
+            Console.WriteLine(d + c); // string + char, concatenation
+            Console.WriteLine(d + d); // string + string, concatenation
+
+            int x = 5;
+            x = x + 1;
+            Console.WriteLine(x);
+            x++;
+            Console.WriteLine(x);
+
+            char y = 'a';
+            y++;
+            Console.WriteLine(y);
+            //y = y + 1; Instead of incremental addition, it's attempting char+int which is addition going into a char memory space( 123 cannot go into a char memory space )
+        }
+    }
+}
