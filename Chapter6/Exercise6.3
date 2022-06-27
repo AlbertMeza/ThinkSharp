@@ -1,0 +1,28 @@
+using System;
+
+namespace Chapter6
+{
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(SquareRoot(192.0));
+            Console.WriteLine(SquareRoot(9.0));
+        }
+        public static double SquareRoot(double x)
+        {
+            double guess = x / 2;
+            double guess2 = (guess + (x / guess)) / 2;
+            double guess3 = (guess2 + (x / guess2)) / 2;
+
+            while (Math.Abs((guess2-guess3)) > 0.0001)
+            {
+                guess2 = (guess3 + (x / guess3)) / 2;
+                guess3 = (guess2 + (x / guess2)) / 2;
+            }
+            return guess3;
+        }
+
+    }
+}
