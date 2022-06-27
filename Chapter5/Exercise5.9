@@ -1,0 +1,30 @@
+using System;
+
+namespace Chapter5
+{
+    internal class Program
+    {
+        public static int gcd(int a, int b)
+        {
+            int r = a % b;
+
+            if (r == 0)
+            {
+                return b;
+            }
+            else
+            {
+                a = b;
+                b = r;
+                return gcd(a, b);
+            }
+        }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(gcd(36,20));
+            Console.WriteLine(gcd(125,25));
+            Console.WriteLine(gcd(171,94));
+        }
+    }
+}
