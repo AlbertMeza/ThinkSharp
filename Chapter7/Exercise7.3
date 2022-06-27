@@ -1,0 +1,31 @@
+using System;
+namespace ThinkSharp
+{
+    public class BadString
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(letterCount("banana", 'a'));
+            Console.WriteLine();
+            IndexOf("banana", 'a');
+        }
+
+        public static int letterCount(string s, char c)
+        {
+            int count = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == c) count++;
+            }
+
+            return count;
+        }
+        public static void IndexOf(string s, char c)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == c) Console.WriteLine("It's located at index: " + i);
+            }
+        }
+    }
+}
