@@ -1,0 +1,20 @@
+using System;
+
+namespace Chapter10
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(RandomDouble(1.5, 117.8));
+        }
+
+        public static double RandomDouble(double low, double high)
+        {
+            Random num = new Random();
+            double x = num.NextDouble();
+            x = (high - low) * x + low;
+            return x;
+        }
+    }
+}
