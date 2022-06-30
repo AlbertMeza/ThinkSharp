@@ -2,22 +2,29 @@ using System;
 
 namespace Chapter10
 {
-	public class Program
-	{
-		public static void Main(string[] args)
-		{
-            Console.WriteLine(CanSpell("quijibo", "oui"));
-            Console.WriteLine(CanSpell("Albert", "the"));
-        }
-        public static bool CanSpell(string letters, string possible)
+    public class Program
+    {
+        public static void Main(string[] args)
         {
-
-            int[] count = new int[26];
-            for (int i = 0; i < possible.Length; i++)
+            Console.WriteLine(CanSpell("quijibo", "jib"));
+            Console.WriteLine(CanSpell("Albert", "tacocat")); ;
+        }
+        public static bool CanSpell(string a, string b)
+        {
+            a = a.ToLower();
+            b = b.ToLower();
+            int[] histo = new int[26];
+            foreach (char i in a)
             {
-                char curChar = possible[i];
-                if (letters.Contains(curChar) != true) return false;
-
+                histo[i - 'a']++;
+            }
+            foreach (char i in b)
+            {
+                histo[i - 'a']--;
+            }
+            for (int i = 0; i < histo.Length; i++)
+            {
+                if (histo[i] < 0) return false;
             }
             return true;
         }
