@@ -1,0 +1,32 @@
+using System;
+using System.Numerics;
+
+namespace Chapter8Exercise5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Pow(85,8));
+        }
+        public static BigInteger Pow(int x, int n)
+        {
+            if (n == 0) return new BigInteger(1);
+
+            // find x to the n/2 recursively
+            BigInteger t = Pow(x, n / 2);
+
+            // if n is even, the result is t squared
+            // if n is odd, the result is t squared times x
+            if (n % 2 == 0)
+            {
+                return BigInteger.Multiply(t, t);
+            }
+            else
+            {
+                BigInteger temp = BigInteger.Multiply(t,t);
+                return BigInteger.Multiply(temp, x);
+            }
+        }
+    }
+}
