@@ -1,0 +1,15 @@
+public static int HandScore(Card[] cards)
+{
+    int score = 0;
+    int cardValue = 0;
+    for (int i = 0; i < cards.Length; i++)
+    {
+        cardValue = cards[i].getRank();
+        if (cardValue > 10)
+        {
+            cardValue = 10;
+        }
+        score += cardValue;
+    }
+    return score; 
+}
