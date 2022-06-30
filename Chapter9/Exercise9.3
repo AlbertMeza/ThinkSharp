@@ -1,0 +1,136 @@
+using System;
+
+namespace RationalNumber
+{
+    public class Rational
+    {
+        internal int denominator, numerator;
+
+        public Rational()
+        {
+            this.denominator = 1;
+            this.numerator = 0;
+        }
+
+        public Rational(int denominator, int numerator)
+        {
+            this.denominator = denominator;
+            this.numerator = numerator;
+        }
+
+        public static void Reset(Rational test)
+        {
+            test.numerator = 10;
+            test.denominator = 20;
+        }
+
+        static void Main(string[] args)
+        {
+            Rational number = new Rational();
+            number.denominator = 4;
+            number.numerator = 5;
+
+            Rational numberTwo = new Rational();
+            numberTwo.denominator = 8;
+            numberTwo.numerator = 5;
+
+            Rational numberThree = new Rational(20,36);
+
+            numberThree.Reduce();
+
+            /*
+            WriteRational(number);
+            Invert(number);
+            WriteRational(number);
+            WriteRational(numberTwo);
+            ToDouble(numberTwo);
+            Negate(numberTwo);
+            */
+
+            //WriteRational(Add(number, numberTwo));
+
+        }
+        public static void WriteRational(Rational fraction)
+        {
+            Console.WriteLine("numerator " + fraction.numerator);
+            Console.WriteLine("denominator " + fraction.denominator);
+        }
+
+        public static void Negate(Rational fraction)
+        {           
+            fraction.numerator *= -1;
+            if(fraction.denominator <= 0)
+            {
+                fraction.numerator *= -1;
+                fraction.denominator *= -1;
+            }
+            Console.WriteLine("numerator " + fraction.numerator);
+            Console.WriteLine("denominator " + fraction.denominator);
+
+        }
+
+        public static void Invert(Rational fraction)
+        {
+            int temp = fraction.denominator;
+            fraction.denominator = fraction.numerator;
+            fraction.numerator = temp;
+        }
+        public static double ToDouble(Rational fraction)
+        {
+            Convert.ToDouble(fraction.denominator);
+            Convert.ToDouble(fraction.numerator);
+
+            return fraction.numerator / fraction.denominator;
+        }
+        public void Reduce()
+        {
+            int a, b, r, GCD;
+            a = this.numerator;
+            b = this.denominator;
+            r = a % b;
+
+            while (r >= 0)
+            {
+
+                if (r == 0)
+                {
+                    GCD = b;
+                    this.numerator = this.numerator / b;
+                    this.denominator = this.denominator / b;
+                }
+                else
+                {
+                    Rational lower = new Rational(b, r);
+                    lower.Reduce();
+
+                }
+            }
+            Console.WriteLine(this.numerator);
+            Console.WriteLine(this.denominator);
+        }
+
+        public static Rational Add(Rational testOne, Rational testTwo)
+        {
+            int num = testOne.numerator + testTwo.numerator;
+            int dom = testOne.denominator + testTwo.denominator;
+            Rational added = new Rational(num, dom);
+
+            int r, a, b;
+            a = added.numerator;
+            b = added.denominator;
+            r = a % b;
+            while(r != 0)
+            {
+                r = a % b;
+                a = b;
+                b = r;
+            }
+            int gcd = a;
+
+            added.numerator = added.numerator / gcd;
+            added.denominator = added.denominator / gcd;
+
+            return added;
+        }
+    } 
+}
