@@ -1,0 +1,6 @@
+For the most part the approach would be the same. Create two histo arrays and compare the two.
+
+Code a int oneLife = 1; as a variable to act as a chance to be off one time
+
+implement if statements to check for this and decrement when off so they lose their oneLife
+
