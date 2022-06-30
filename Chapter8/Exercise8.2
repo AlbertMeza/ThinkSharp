@@ -1,0 +1,19 @@
+1.
+Stack Diagram 
+
+Format
+Main: Statement; Console:
+
+Main: Point blank = new Point(5, 8); Console: 
+Main: Rectangle rect = new Rectangle(0,2,4,4); Console:
+Main: Point centre = FindCentre(rect); Console:
+FindCentre(0,2,4,4): int x = 0 + 4 / 2; Console:
+FindCentre(0,2,4,4): int y = 2 + 4 / 2; Console:
+FindCentre(0,2,4,4): return new Point(2,3); Console:
+Main: double dist = Distance(centre, blank); Console:
+Distance((2,4), (5,8)): int dx = 2 - 5;  Console: 
+Distance((2,4), (5,8)): int dy = 8 - 3; Console: 
+Distance((2,4), (5,8)): return Math.Sqrt(9 + 25)
+
+2. 
+Output: 5
