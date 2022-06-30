@@ -1,0 +1,22 @@
+using System;
+
+namespace Chapter10
+{
+    internal class Program
+    {
+      public static int[] makeHist(int[] scores)
+      {
+        //makes a new array to store count of values
+        int[] counts = new int[100];
+
+        //a loop that adds to count every time a certain value appears
+        for (int i = 0; i < scores.Length; i++)
+        {
+          int index = scores[i];
+          counts[index]++;
+        }
+
+        return counts;
+      }
+	}
+}
