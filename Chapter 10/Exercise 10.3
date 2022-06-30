@@ -1,0 +1,19 @@
+using System;
+
+namespace Chapter10
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(RandomInt(111, 117));
+        }
+
+        public static int RandomInt(int low, int high)
+        {
+            Random num = new Random();
+            int x = num.Next(low, high);
+            return x;
+        }
+    }
+}
