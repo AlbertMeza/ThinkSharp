@@ -1,0 +1,39 @@
+using System;
+
+namespace Chapter10
+{
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+            string sentence = "The quick brown fox jumps over the lazy dog";
+            printArray(letterHist(sentence));
+		}
+        public static int[] letterHist(string s)
+        {
+
+            int[] count = new int[26];
+            s = s.ToLower();
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                char curChar = s[i];
+
+                if ('a' <= curChar && curChar <= 'z')
+                {
+                    count[curChar - 'a']++;
+                }
+            }
+            return count;
+        }
+
+        //helper method to print out content within an int array
+        public static void printArray(int[] testArr)
+        {
+            foreach(var i in testArr)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
