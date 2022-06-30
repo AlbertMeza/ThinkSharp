@@ -1,0 +1,29 @@
+using System;
+
+namespace Dupledrome
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(IsDupledrome("Albert"));
+            Console.WriteLine(IsDupledrome("llaammaa"));
+        }
+
+
+        public static bool IsDupledrome(string s)
+        {
+            if (s.Length == 0)
+                return true;
+            else
+            {
+                if (doubleLetter(s))
+                {
+                    return IsDupledrome(s.Substring(2, s.Length - 1));
+                }
+                else
+                    return false;
+            }
+        }
+    }
+}
