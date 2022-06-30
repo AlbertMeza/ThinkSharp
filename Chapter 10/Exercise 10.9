@@ -1,0 +1,50 @@
+using System;
+
+namespace Chapter10
+{
+    internal class Program
+    {
+		public static void Main(string[] args)
+        {
+			int[] threes = { 3, 7349, 1233, 12, 2321, 111, 89345 };
+			Console.WriteLine(indexOfMaxInRange(threes, 2, 5));
+			swapElement(threes, 4, 5);
+			SelectionSort(threes);
+			for (int i = 0; i < threes.Length; i++)
+            {
+                Console.WriteLine(threes[i]);
+            }
+        }
+		public static int indexOfMaxInRange(int[] arr, int lowIndex, int highIndex)
+		{
+			int indexOfMax = lowIndex;
+
+			for (int i = lowIndex + 1; i <= highIndex; i++)
+			{
+				if (arr[i] > arr[indexOfMax])
+				{
+					indexOfMax = i;
+				}
+			}
+			return indexOfMax;
+		}
+
+		public static void swapElement(int[] arr, int index1, int index2)
+		{
+			int temp = arr[index1];
+			arr[index1] = arr[index2];
+			arr[index2] = temp;
+		}
+
+		public static void SelectionSort(int[] arr)
+		{
+			int length = arr.Length;
+			
+			for (int i = 0; i < length - 1; i++)
+			{
+				int indexOfMax = indexOfMaxInRange(arr, i, length - 1);
+				swapElement(arr, i, indexOfMax);
+			}
+		}
+	}
+}
