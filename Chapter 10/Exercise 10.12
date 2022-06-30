@@ -1,0 +1,42 @@
+using System;
+
+namespace IsDoubloon
+{
+    internal class Program
+    {
+        public static void Main(String[] args)
+        {
+            Console.WriteLine(IsDoubloon("Caucasus")); //test IsDoubloon
+            Console.WriteLine();
+            Console.WriteLine(IsDoubloon("Albert")); //test for one that would be false
+
+        }
+        public static bool IsDoubloon(string s)
+        {
+
+            int[] letters = letterHist(s);
+
+            for (int i = 0; i < letters.Length; i++)
+            {
+                if (letters[i] != 2 && letters[i] != 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public static int[] letterHist(string s)
+        {
+            //create integer array of the 26 alphabet letters
+            int[] count = new int[25];
+            s = s.ToLower();
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                char curChar = s[i];
+                count[curChar - 'a']++; 
+            }
+            return count;
+        }
+    }
+}
