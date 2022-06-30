@@ -1,0 +1,32 @@
+using System;
+
+namespace Palidrome
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(IsPalindrome("taccat"));
+            Console.WriteLine(IsPalindrome("Albert"));
+        }
+        
+        public static bool IsPalindrome(string s)
+        {
+            if (s.Length == 1 || s.Length == 0)
+                return true;
+            else
+            {
+                if (First(s) == Last(s))
+                {
+                    return IsPalindrome(Middle(s));
+                }
+                else return false;
+            }
+        }
+        
+        public static string Middle(string s)
+        {
+            return s.Substring(1, s.Length -2);
+        }
+    }
+ }
