@@ -1,0 +1,32 @@
+using System;
+
+namespace Birthdate
+{
+    internal class Date
+    { public int Year, Month, Day;
+
+        static void Main(string[] args)
+        {
+            Date bday = new Date();
+            bday.Year = 1996;
+            bday.Month = 10;
+            bday.Day = 25;
+
+            Date bday2 = new Date(1996, 10, 25);
+        }
+
+        public Date() 
+        {
+            this.Year = 0;
+            this.Month = 0;
+            this.Day = 0;
+        }
+
+        public Date(int year, int month, int day)
+        {
+            this.Year = year;
+            this.Month = month;
+            this.Day = day;
+        }
+    }
+}
