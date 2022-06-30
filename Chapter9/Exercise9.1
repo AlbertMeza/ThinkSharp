@@ -1,0 +1,40 @@
+using System;
+
+namespace Scrabble
+{
+    public class Tile
+    {
+        public char Letter;
+        public int Value;
+            
+        static void Main(string[] args)
+        {
+            Tile tile = new Tile('L', 2);
+            WriteTile(tile);
+
+            TestTile();
+        }
+
+        public Tile()
+        {
+            this.Letter = ' ';
+            this.Value = 0;
+        }
+
+        public Tile(char letter, int value)
+        {
+            this.Letter = letter;
+            this.Value = value;
+        }
+
+        public static void WriteTile(Tile t)
+        {
+            Console.WriteLine($"Letter: " + t.Letter + "\n" + "Value: " + t.Value);
+        }
+        public static void TestTile()
+        {
+            Tile test = new Tile('Z', 10);
+            WriteTile(test);
+        }
+    }
+}
