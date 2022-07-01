@@ -1,0 +1,23 @@
+public void SwapCards(int indiceOne, int indiceTwo)
+{
+    Card temp = new Card();
+    temp = this.Cards[indiceOne];
+    this.Cards[indiceOne] = this.Cards[indiceTwo];
+    this.Cards[indiceTwo] = temp;
+}
+
+public static int IndexLowestCard(Deck test, int low, int high)
+{
+    int lowest = 0;
+    if (low == high) return low;
+    else
+    {
+        for (int i = low; i < (high - low); i++)
+        {
+            int compare = Card.CompareCard(test.Cards[i], test.Cards[i + 1]);
+            if (compare == 1) lowest = i;
+            else lowest = i +1;
+        }
+    }
+    return lowest;
+}
