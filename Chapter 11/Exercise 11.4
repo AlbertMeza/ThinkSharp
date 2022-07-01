@@ -1,0 +1,22 @@
+public static int[] suitHist(Card[] cards)
+{
+    int[] result = new int[4];
+    for (int i = 0; i < cards.Length; i++)
+    {
+        result[i] = cards[i].getSuit();
+    }
+    return result;
+}
+
+public static bool hasFlush(Card[] cards)
+{
+    int count = 1;
+    int[] suits = suitHist(cards);
+    int suit = suits[0];
+    for (int i = 1; i < suits.Length; i++)
+    {
+        if (suits[i] == suit) count++;
+        if (count >= 5) return true;
+    }
+    return false; 
+}
