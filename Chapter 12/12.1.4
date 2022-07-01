@@ -1,0 +1,7 @@
+public void ShuffleDeck()
+{
+    for (int i = 0; i < this.Cards.Length; i++)
+    {
+        this.SwapCards(i, RandomInt(0, this.Cards.Length));
+    }
+}
