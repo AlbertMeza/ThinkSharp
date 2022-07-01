@@ -1,0 +1,7 @@
+public void SwapCards(int indiceOne, int indiceTwo)
+{
+    Card temp = new Card();
+    temp = this.Cards[indiceOne];
+    this.Cards[indiceOne] = this.Cards[indiceTwo];
+    this.Cards[indiceTwo] = temp;
+}
