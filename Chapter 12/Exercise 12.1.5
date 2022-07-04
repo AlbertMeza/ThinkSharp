@@ -8,16 +8,12 @@ public void SwapCards(int indiceOne, int indiceTwo)
 
 public static int IndexLowestCard(Deck test, int low, int high)
 {
-    int lowest = 0;
-    if (low == high) return low;
-    else
+    int lowest = low;
+    if (low == high) return lowest;
+    for (int i = low + 1; i < high - low + 1; i++)
     {
-        for (int i = low; i < (high - low); i++)
-        {
-            int compare = Card.CompareCard(test.Cards[i], test.Cards[i + 1]);
-            if (compare == 1) lowest = i;
-            else lowest = i +1;
-        }
+        if (Card.CompareCard(test.Cards[lowest], test.Cards[i]) == 1) lowest = i;
+
     }
     return lowest;
 }
