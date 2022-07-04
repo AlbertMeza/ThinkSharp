@@ -1,0 +1,100 @@
+Exercise 13.4
+
+//Instance methods tend to be more concise and work great when dealing with only one object especially in pure functions or modifications to the invoking object
+//Static methods work best for many fruitful methods especially those that return new instance 
+//Instance tend to be more natural for simpler methods 
+//I kept Add() as a static purposely since I am creating a new instance of Rational, this seems like the more clear and natural choice
+
+
+using System;
+
+namespace Rational_Numbers
+{
+    public class Rational
+    {
+        internal int numerator, denominator;
+
+        public Rational()
+        {
+            this.numerator = 0;
+            this.denominator = 1;
+        }
+
+        public Rational(int numerator, int denominator)
+        {
+            this.numerator = numerator;
+            this.denominator = denominator;
+        }
+        public void WriteRational()
+        {
+            Console.WriteLine("numerator " + this.numerator);
+            Console.WriteLine("denominator " + this.denominator);
+        }
+        public void Negate()
+        {
+            this.numerator *= -1;
+            if (this.denominator <= 0)
+            {
+                this.numerator *= -1;
+                this.denominator *= -1;
+            }
+            this.WriteRational();
+
+        }
+        public void Invert()
+        {
+            int temp = this.denominator;
+            this.denominator = this.numerator;
+            this.numerator = temp;
+        }
+        public double ToDouble()
+        {
+            double numerator = Convert.ToDouble(this.numerator);
+            double denominator = Convert.ToDouble(this.denominator);
+
+            return numerator / denominator;
+        }
+
+        public void Reduce()
+        {
+            int a, b, r, GCD;
+            a = this.numerator;
+            b = this.denominator;
+            r = a % b;
+            GCD = b;
+            while (r != 0)
+            {
+                r = a % b;
+                a = b;
+                b = r;
+                GCD = a;
+            }
+
+            this.numerator /= GCD;
+            this.denominator /= GCD;
+        }
+
+        public static Rational Add(Rational testOne, Rational testTwo)
+        {
+            int numerator, denominator;
+            if (testOne.denominator == testTwo.denominator)
+            {
+                numerator = testOne.numerator + testTwo.numerator;
+                denominator = testOne.denominator + testTwo.denominator;
+            }
+            else
+            {
+                int num1 = testOne.numerator*testTwo.denominator;
+                int num2 = testTwo.numerator*testOne.denominator;
+                numerator = num1 + num2;
+                denominator = testOne.denominator  * testTwo.denominator;
+            }
+
+            Console.WriteLine("This is the added fraction: \n");
+            Rational added = new Rational(numerator, denominator);
+            added.WriteRational();
+            Console.WriteLine("\nThis is the reduced fraction: \n");
+            added.Reduce();
+            return added;
+        }
+    }
