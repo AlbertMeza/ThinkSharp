@@ -1,0 +1,9 @@
+Before
+public static double Abs(Complex c) {
+  return Math.Sqrt(c.Real * c.Real + c.Imaginary * c.Imaginary);
+}
+
+After
+public double Abc() {
+  return Math.Sqrt(this.Real * this.Real + this.Imaginary * this.Imaginary);
+}
