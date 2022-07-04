@@ -1,0 +1,39 @@
+ public static Deck Merge(Deck d1, Deck d2)
+{
+    // create a new deck big enough for all the cards
+    Deck result = new Deck(d1.Cards.Length + d2.Cards.Length);
+    int i = 0; // used to keep track of where we are in the first deck
+    int j = 0; // used to keep track of where we are in the second deck
+               // the index k traverses the result deck
+    for (int k = 0; k < result.Cards.Length; k++)
+    {
+        if (d1.Cards.Length == i)
+        {
+            result.Cards[k] = d2.Cards[j];
+            j++;
+        }
+        else if (d2.Cards.Length == j)
+        {
+            result.Cards[k] = d1.Cards[i];
+            i++;
+        }
+        else
+        {
+
+            if (Card.CompareCard(d1.Cards[i], d2.Cards[j]) == -1)
+            {
+                result.Cards[k] = d1.Cards[i];
+                i++;
+            }
+            else
+            {
+                result.Cards[k] = d2.Cards[j];
+                j++;
+            }
+        }
+        // if d1 is empty, d2 wins; if d2 is empty, d1 wins;
+        // otherwise, compare the two cards
+        // add the winner to the new deck
+    }
+    return result;
+}
