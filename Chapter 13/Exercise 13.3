@@ -1,0 +1,9 @@
+Before 
+public bool Compare(Complex b) {
+  return (Real == b.Real && Imaginary == b.Imaginary);
+}
+
+After
+public static bool Compare(Complex a, Complex b) {
+  return (a.Real == b.Real && a.Imaginary == b.Imaginary);
+}
