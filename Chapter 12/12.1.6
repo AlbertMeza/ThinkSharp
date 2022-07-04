@@ -1,0 +1,8 @@
+public static void SortDeck(Deck test)
+{
+    for(int i = 0; i < test.Cards.Length -1; i++)
+    {
+        int lowest = IndexLowestCard(test, i+1, test.Cards.Length -1);
+        test.SwapCards(i, lowest);
+    }
+}
